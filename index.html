@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JKBOSE Class 10 Mathematics Quiz - Developed by Farhan</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <h1 class="header-title">📐 JKBOSE Class 10 Mathematics Quiz</h1>
+            <p class="header-subtitle">Master Past Papers • 10 Years of Questions • Ace Your Exams</p>
+            <p class="header-developed">Developed by Farhan</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Mode Selection Screen -->
+        <section id="mode-screen" class="screen active">
+            <div class="card">
+                <h2>Select Quiz Mode</h2>
+                <p class="section-desc">Choose how you want to practice:</p>
+
+                <div class="mode-options">
+                    <button class="mode-btn" data-mode="chapter">
+                        <span class="mode-icon">📚</span>
+                        <span class="mode-label">By Chapter</span>
+                        <span class="mode-desc">Practice a specific topic</span>
+                    </button>
+                    <button class="mode-btn" data-mode="full">
+                        <span class="mode-icon">📋</span>
+                        <span class="mode-label">Full Model Paper (10 Years)</span>
+                        <span class="mode-desc">Complete test covering all topics</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter Selection Screen -->
+        <section id="chapter-screen" class="screen">
+            <div class="card">
+                <button class="btn-back" onclick="backToMode()">← Back</button>
+                <h2>Select Chapter</h2>
+                <p class="section-desc">Choose a chapter to practice:</p>
+                <div id="chapters-container" class="grid-chapters"></div>
+            </div>
+        </section>
+
+        <!-- Year Selection Screen -->
+        <section id="year-screen" class="screen">
+            <div class="card">
+                <button class="btn-back" onclick="backToMode()">← Back</button>
+                <h2>Select Year</h2>
+                <p class="section-desc">Choose a year for the full model paper:</p>
+                <div id="years-container" class="grid-years"></div>
+            </div>
+        </section>
+
+        <!-- Quiz Screen -->
+        <section id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <button class="btn-back" onclick="backToMode()">← Back</button>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                    <p class="progress-text">Question <span id="current-q">1</span> of <span id="total-q">10</span></p>
+                </div>
+            </div>
+
+            <div id="quiz-container" class="card">
+                <form id="quiz-form">
+                    <div id="question-container"></div>
+
+                    <div class="button-group">
+                        <button type="button" id="prev-btn" class="btn btn-secondary" disabled>← Previous</button>
+                        <button type="button" id="next-btn" class="btn btn-primary">Next →</button>
+                        <button type="submit" id="submit-btn" class="btn btn-success" style="display:none;">Submit Quiz</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Results Screen -->
+        <section id="results-screen" class="screen">
+            <div class="results-header">
+                <h2>Quiz Results 🎉</h2>
+            </div>
+
+            <div class="results-summary">
+                <div class="score-card">
+                    <div class="score-circle">
+                        <span id="score-percentage">0</span>%
+                    </div>
+                    <p id="score-label">Excellent!</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <p class="stat-label">Total Questions</p>
+                        <p class="stat-value" id="stat-total">0</p>
+                    </div>
+                    <div class="stat-box correct">
+                        <p class="stat-label">✓ Correct</p>
+                        <p class="stat-value" id="stat-correct">0</p>
+                    </div>
+                    <div class="stat-box wrong">
+                        <p class="stat-label">✗ Wrong</p>
+                        <p class="stat-value" id="stat-wrong">0</p>
+                    </div>
+                    <div class="stat-box unanswered">
+                        <p class="stat-label">⊘ Unanswered</p>
+                        <p class="stat-value" id="stat-unanswered">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-review">
+                <h3>Answer Key Review</h3>
+                <div id="results-details"></div>
+            </div>
+
+            <div class="results-actions">
+                <button class="btn btn-primary" onclick="location.reload()">Retake Quiz</button>
+                <button class="btn btn-secondary" onclick="backToMode()">Home</button>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 JKBOSE Mathematics Quiz Platform | Developed by Farhan</p>
+    </footer>
+
+    <script src="/static/js/mathjax-config.js"></script>
+    <script src="/static/js/quiz.js"></script>
+</body>
+</html>
